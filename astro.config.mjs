@@ -27,7 +27,7 @@ const whenExternalScripts = (items = []) =>
 export default defineConfig({
   output: 'static',
   site: 'https://stateofflux.com',
-  base: '/',
+//   base: '/',
 
   integrations: [
     tailwind({
