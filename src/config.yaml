@@ -1,6 +1,6 @@
 site:
   name: Mark Mansour
-  site: 'https://markmansour.github.io'
+  site: 'https://stateofflux.com'
   base: '/astrowind'
   trailingSlash: false
 
