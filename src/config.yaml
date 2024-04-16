@@ -1,7 +1,7 @@
 site:
   name: Mark Mansour
   site: 'https://stateofflux.com'
-  base: '/astrowind'
+  base: '/'
   trailingSlash: false
 
   googleSiteVerificationId: null
