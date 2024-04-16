@@ -26,6 +26,8 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   output: 'static',
+  site: 'https://markmansour.github.io',
+  base: '/astrowind',
 
   integrations: [
     tailwind({
