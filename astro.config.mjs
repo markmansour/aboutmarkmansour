@@ -26,7 +26,7 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   output: 'static',
-  site: 'https://stateofflux.com',
+  site: 'https://aboutmarkmansour.com',
 //   base: '/',
 
   integrations: [
