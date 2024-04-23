@@ -6,11 +6,14 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Testimony from '~/components/widgets/Testimony.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import Content from '~/components/widgets/Content.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 
 import kamenImage from '~/assets/images/kamenmoutafov.jpeg';
 import seanImage from '~/assets/images/seanmaloney.jpeg';
+import joeImage from '~/assets/images/joeisenhour.jpeg';
+import idoImage from '~/assets/images/idobenshachar.jpeg';
+import neilImage from '~/assets/images/neilmacneale.jpeg';
 
 const metadata = {
   title: 'Portfolio',
@@ -168,5 +171,42 @@ const {
       </Testimony>
     </WidgetWrapper>
   </Features3>
+
+
+    <!-- Testimonials Widget *********** -->
+
+    <Testimonials
+    title="Words from past collegues"
+    testimonials={[
+      {
+        testimonial: `Mark's strengths include his ability to bring clarity to a problem by understanding the deep technical details, and then being able to up-level them so that everyone can understand.  In addition to this, Mark brings out the best in his direct reports and colleagues by teaching: Mark asks questions, so that others can arrive at a solution themselves, rather than just sharing the solution directly.  This has greatly helped me grow as an engineer.`,
+        name: 'Ido Benshachar',
+        job: 'Principal Engineering Manager at Microsoft',
+        image: {
+          src: idoImage,
+          alt: 'Ido Benshachar Image',
+        },
+      },
+      {
+        testimonial: `Mark is the person who taught me how to be a successful manager at Amazon. Management at Amazon comes with extremely high expectations. I honestly didn't know what I was in for when I started the job, even though I had 7 years of experience there as an engineer.  Through Mark's guidance I learned how to communicate at an executive level. I learned how to manage large projects which had an impact across the entire company. Mark was good at finding the balance of leaning in when I needed help and giving me lots of space to when I was doing ok (or when failure was an option).  Ultimately I got promoted to Sr. Manager, and I never would have performed at that level without Mark's mentorship. I'm grateful to have had his help, and I think he would be a great leader on any team.`,
+        name: 'Neil Macneale IV',
+        job: 'former Senior Manager at AWS',
+        image: {
+          src: neilImage,
+          alt: 'Neil Macneale IV Image',
+        },
+      },
+      {
+        testimonial: `I observed Mark to be a highly effective leader of people. I saw him aligning work to impact, an emphasis on quality and automation in services, good judgment and quick decision making when there is no time for deep analysis, an iterative approach to software and services to deliver as much value as possible as quickly as possible, then continue to iterate towards your goals.`,
+        name: 'Joe Isenhour',
+        job: 'Principal Engineering Manager at Microsoft',
+        image: {
+          src: joeImage,
+          alt: 'Joe Isenhour Image',
+        },
+      },
+    ]}
+  />
+
 
 </Layout>
