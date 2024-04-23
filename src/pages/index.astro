@@ -3,16 +3,22 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Header from '~/components/widgets/Header.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Content from '~/components/widgets/Content.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
-import Features3 from '~/components/widgets/Features3.astro';
-import Testimonials from '~/components/widgets/Testimonials.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Testimony from '~/components/widgets/Testimony.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+
+import kamenImage from '~/assets/images/kamenmoutafov.jpeg';
 
 const metadata = {
   title: 'Portfolio',
 };
+
+const {
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props;
 ---
 <Layout metadata={metadata}>
     <Fragment slot="header">
@@ -44,7 +50,6 @@ const metadata = {
         href: 'https://www.linkedin.com/in/markmansour/' }]}
   >
     <Fragment slot="subtitle">
-
         I'm a <strong>software engineering leader</strong> with a passion for solving customer's problems through software.
         <br/>
         <br/>
@@ -52,4 +57,52 @@ const metadata = {
         I've also had the pleasure of helping startups as they find product-market fit.
     </Fragment>
   </Hero>
+
+  <Features2
+    title="How I work"
+    subtitle="Like all leaders, my role is to deliver on what is important to my business as fast as possible.  But each leader has their own way of achieving those goal.  I’ve laid out the way I like to work."
+    columns={3}
+    items={[
+        {
+        title: 'Empowering my team',
+        description:
+            'As a leader, much of my success comes from my team.  Therefore, my goal is to create an environment where <strong>people do their best work</strong>.  I work with high caliber people.  I want to allow each person on my team to bring their unique perspective to their role so I can get the most out of their creativity and energy.',
+        icon: 'tabler:school',
+        },
+        {
+        title: 'Alignment',
+        description:
+        'I&apos;ve found that one of the most effective leavers to get higher quality work done more quickly is ensuring that <strong>everyone on the team knows what they’re responsible for and why</strong>.&nbsp;By reviewing org structures, establishing goals, clarifying roles and responsibilities clears the way for people to focus on work that pushes the whole team in the same direction.',
+        icon: 'tabler:home-star',
+        },
+        {
+        title: 'Delegation',
+        description:
+        'I believe those closest to “the work” are in the best place to make decision on how to do “the work.”&nbsp;My goal is to <strong>delegate</strong> as much as possible to my team.&nbsp;Delegating authority&nbsp;can range from full delegation where choices are left entirely to the team through to being quite directive.&nbsp;It all depends on the people and the circumstances.',
+        icon: 'tabler:photo',
+        },
+        {
+        title: 'Collaboration',
+        description:
+        'When working with my direct reports, I encourage a <strong>collaborative environment</strong>.  I believe to get the best outcomes a range of opinions must be shared to work through a problem before coming to a decision.  And with a decision, my team works in unison to achieve our shared goals.',
+        icon: 'tabler:shopping-cart',
+        },
+        {
+        title: 'My Focus',
+        description:
+        'With the team in alignment and work delegated, I’m then free to put my energy into <strong>growing my people</strong>, <strong>working with my peers on our shared objectives</strong>, and <strong>working with my leadership to drive our business forward</strong>.',
+        icon: 'tabler:article',
+        }
+    ]}
+    >
+</Features2>
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+    <Testimony image={{
+    src: kamenImage,
+    alt: 'Kamen Moutafov Image',
+    }} testimonial='I&#8217;ve had great experiences working with Mark in the Microsoft Identity team. Engaged, collaborative, detailed-oriented and punctual. Always willing to work through an issue and find a win-win solution.' name='Kamen Moutafov' job='Partner Director of Engineering at Microsoft'/>
+</Testimony>
+</WidgetWrapper>
+
 </Layout>
