@@ -6,8 +6,11 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Testimony from '~/components/widgets/Testimony.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features3 from '~/components/widgets/Features3.astro';
 
 import kamenImage from '~/assets/images/kamenmoutafov.jpeg';
+import seanImage from '~/assets/images/seanmaloney.jpeg';
 
 const metadata = {
   title: 'Portfolio',
@@ -60,7 +63,7 @@ const {
 
   <Features2
     title="How I work"
-    subtitle="Like all leaders, my role is to deliver on what is important to my business as fast as possible.  But each leader has their own way of achieving those goal.  I’ve laid out the way I like to work."
+    subtitle="Like all leaders, my role is to deliver on what is important to my business as fast as possible.  But each leader has their own way of achieving those goal.  I&#8217;ve laid out the way I like to work."
     columns={3}
     items={[
         {
@@ -72,7 +75,7 @@ const {
         {
         title: 'Alignment',
         description:
-        'I&apos;ve found that one of the most effective leavers to get higher quality work done more quickly is ensuring that <strong>everyone on the team knows what they’re responsible for and why</strong>.&nbsp;By reviewing org structures, establishing goals, clarifying roles and responsibilities clears the way for people to focus on work that pushes the whole team in the same direction.',
+        'I&apos;ve found that one of the most effective leavers to get higher quality work done more quickly is ensuring that <strong>everyone on the team knows what they&#8217;re responsible for and why</strong>.&nbsp;By reviewing org structures, establishing goals, clarifying roles and responsibilities clears the way for people to focus on work that pushes the whole team in the same direction.',
         icon: 'tabler:home-star',
         },
         {
@@ -90,19 +93,79 @@ const {
         {
         title: 'My Focus',
         description:
-        'With the team in alignment and work delegated, I’m then free to put my energy into <strong>growing my people</strong>, <strong>working with my peers on our shared objectives</strong>, and <strong>working with my leadership to drive our business forward</strong>.',
+        'With the team in alignment and work delegated, I&#8217;m then free to put my energy into <strong>growing my people</strong>, <strong>working with my peers on our shared objectives</strong>, and <strong>working with my leadership to drive our business forward</strong>.',
         icon: 'tabler:article',
         }
     ]}
     >
-</Features2>
+    <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto py-10 md:py-10 lg:py-10 ${classes?.container ?? ''}`} bg={bg}>
+      <Testimony
+        image={{
+          src: kamenImage,
+          alt: 'Kamen Moutafov Image',
+        }}
+        testimonial='I&#8217;ve had great experiences working with Mark in the Microsoft Identity team. Engaged, collaborative, detailed-oriented and punctual. Always willing to work through an issue and find a win-win solution.'
+        name='Kamen Moutafov'
+        job='Partner Director of Engineering at Microsoft'/>
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-    <Testimony image={{
-    src: kamenImage,
-    alt: 'Kamen Moutafov Image',
-    }} testimonial='I&#8217;ve had great experiences working with Mark in the Microsoft Identity team. Engaged, collaborative, detailed-oriented and punctual. Always willing to work through an issue and find a win-win solution.' name='Kamen Moutafov' job='Partner Director of Engineering at Microsoft'/>
-</Testimony>
-</WidgetWrapper>
+      </Testimony>
+      </WidgetWrapper>
+    </Features2>
+
+  <Features3
+    title="What I do"
+    subtitle=`I get it; you want to know the size and the shape of my teams as it&#8217;s a quick way to see if I can manage (or build) a team for you.
+    You also want to understand that I&#8217;ve run high-scale systems.  Let me explain.`
+    columns={2}
+    items={[
+    {
+      title: 'Scope and Impact',
+      description: `Over the past 8 years I&#8217;ve led teams with two
+      levels of managers reporting to me and a recursive team size of around 90.  I&#8217;m based in Seattle and it&#8217;s common for me
+      to have teams spread across the US and internationally.  My team&#8217;s products are often a significant piece of a
+      larger product portfolio.  In the past I&#8217;ve owned the Hybrid Identity features of Microsoft&#8217;s Entra ID,
+      the Prime / Checkout / Merchant portions of Amazon&#8217;s Buy With Prime product, and Continuous Delivery, Automated
+      testing, and Change Management tooling as part of Amazon&#8217;s Developer Productivity at AWS.  These systems process
+      billions of records.  I&#8217;ve owned fleets of over 80,000 machines, serving over 100s of thousands of QPS.  On the
+      business side, I lead and drive strategic plans for my area of ownership.  I work closely with my stakeholders to
+      influence their strategies.`,
+      icon: 'tabler:stairs',
+    },
+    {
+      title: 'Culture and Leadership',
+      description: `I see culture and leadership that the ingredients that make work rewarding, enjoyable, and productive.  Overall, I&#8217;m aiming for a team that is on top of their work and has fun while doing it.  To create a great environment, I drive change and cultural transformation within my area of accountability.  I cultivate a culture that improves performance (increasing speed and frequency of delivery and reducing the number and length of outages), emphasizes system stability (when appropriate), and quality (better code and architecture as well as products that meet customer&#8217;s needs).  I also help my people reach their potential, providing those who are ready with stretch opportunities.  I coach, mentor, and develop my team members to increase the capacity of my organization.`,
+      icon: 'tabler:flip-vertical',
+    },
+    {
+      title: 'Influence and Decision Making',
+      description: `We don&#2019;t work in a bubble, we work in an ecosystem.  I work with leaders across an entire company to create alignment and drive collaboration.`,
+      icon: 'tabler:shield-lock',
+    },
+    {
+      title: 'Knowledge',
+      description: `I love learning about new industries, which is why I’ve worked in so many of them.  I have significant subject matter expertise with developer productivity, Identity, multisided marketplaces, and Information Retrieval.  I’ve also spent time in Banking and AI (Agent Based systems).`,
+      icon: 'tabler:accessible',
+    },
+    {
+      title: 'Judgement and Risk Management',
+      description: `I like getting work done which requires seeing around corners to predict unforeseen issues and think carefully where to invest effort.  My day-to-day management skills are strong in both project management and managing production systems. I actively manage risk and work with my teams so they improve their ability to identify and manage that risk.`,
+      icon: 'tabler:chevrons-up',
+    }
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  >
+
+    <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+      <Testimony
+        image={{
+          src: seanImage,
+          alt: 'Sean Maloneys Image',
+        }}
+        testimonial=`I can't speak highly enough of his leadership, direction, and ability to create a healthy culture in his organization. […] Mark is able to create high-functioning organizations that work well together under pressure and deliver results without sacrificing morale.`
+        name='Sean Maloney'
+        job='Director of Engineering at Epic Games'/>
+      </Testimony>
+    </WidgetWrapper>
+  </Features3>
 
 </Layout>
