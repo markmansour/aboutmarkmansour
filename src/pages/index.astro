@@ -8,12 +8,14 @@ import Testimony from '~/components/widgets/Testimony.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Features3 from '~/components/widgets/Features3.astro';
+import Content from '~/components/widgets/Content.astro';
 
 import kamenImage from '~/assets/images/kamenmoutafov.jpeg';
 import seanImage from '~/assets/images/seanmaloney.jpeg';
 import joeImage from '~/assets/images/joeisenhour.jpeg';
 import idoImage from '~/assets/images/idobenshachar.jpeg';
 import neilImage from '~/assets/images/neilmacneale.jpeg';
+import markCasualImage from '~/assets/images/markmansour-casual.jpeg';
 
 const metadata = {
   title: 'Portfolio',
@@ -158,6 +160,10 @@ const {
     ]}
     classes={{ container: 'max-w-5xl' }}
   >
+  <Fragment slot="bg">
+    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+  </Fragment>
+
 
     <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
       <Testimony
@@ -170,12 +176,13 @@ const {
         job='Director of Engineering at Epic Games'/>
       </Testimony>
     </WidgetWrapper>
+
   </Features3>
 
 
     <!-- Testimonials Widget *********** -->
 
-    <Testimonials
+  <Testimonials
     title="Words from past collegues"
     testimonials={[
       {
@@ -206,7 +213,66 @@ const {
         },
       },
     ]}
-  />
+    >
+  </Testimonials>
 
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          target: '_blank',
+          text: 'LinkedIn',
+          href: 'https://www.linkedin.com/in/markmansour/',
+        },
+      },
+      {
+        icon: 'tabler:brand-github',
+        callToAction: {
+          target: '_blank',
+          text: 'Github',
+          href: 'https://github.com/markmansour',
+        },
+      },
+      /*
+      {
+        icon: 'tabler:brand-pinterest',
+        callToAction: {
+          target: '_blank',
+          text: 'Pinterest',
+          href: '#',
+        },
+      },
+      */
+    ]}
+    image={{
+      src: markCasualImage,
+      alt: 'Mark Mansour in Washington DC',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+      <p>
+        Today I lead software engineering teams, but started as a software engineer working on internet applications since the earliest days of the web.  My day job was programming for the first ten years of my career working on distributed systems in Java, C++, and Ruby.  I still enjoy programming and occasionally I scrape out time to write code.  But over the last 10 years I’ve been excited, challenged, and engrossed learning about leadership and how to create high performing technology teams.
+      </p>
+      <br />
+      <p>
+        Looking forward, I know that the people I work with are my top priority as I seek out new roles.  I’m looking for an energetic group of people who play well together and enjoy each other’s company. This leads me to a conclusion that the product is really a secondary consideration.  That will come as a surprise to many, but if I put the people I work with first then everything else must come after that.  I’m a curious person and I love to learn new domains and technology.  What I do look for in a product is that is has high growth potential and that leadership values that product.
+      </p>
+      <br />
+      <p>If you’ve got this far, thank you.</p>
+      <br />
+      <p>And if what I’ve written resonates with you please reach out to me - even if it isn’t in relation to a job.</p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
 
 </Layout>
