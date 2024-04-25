@@ -36,6 +36,7 @@ import * as widKnowledge from '~/pages/snippets/_wid-knowledge.md';
 import * as widJudgement from '~/pages/snippets/_wid-judgement.md';
 
 import * as aboutMe from '~/pages/snippets/_about-me.md';
+import Button from '~/components/ui/Button.astro';
 
 
 const metadata = {
@@ -138,7 +139,6 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
       />
     </WidgetWrapper>
   </Features2>
-</Layout>
 
 <Features3
   title="What I do"
@@ -238,49 +238,10 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
   <Fragment slot="content">
     <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
     <Fragment set:html={aboutMe.compiledContent()}/>
-  <Fragment slot="bg">
-    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
   </Fragment>
 </Content>
 
-<!-- Footer Widget **************** -->
-  <WidgetWrapper
-    id={id}
-    isDark={isDark}
-    containerClass={`max-w-5xl${classes?.container ?? ""}`}
-    bg={bg}
-  >
-    <ItemGrid
-      items={[
-      {
-        callToAction: {
-          target: '_blank',
-          text: 'mark@stateofflux.com',
-          href: 'mailto:mark@stateofflux.com',
-          class: 'underline'
-        },
-      },
-      {
-        icon: 'tabler:brand-linkedin',
-        callToAction: {
-          target: '_blank',
-          href: 'https://www.linkedin.com/in/markmansour/',
-        },
-      },
-      {
-        icon: 'tabler:brand-github',
-        callToAction: {
-          target: '_blank',
-          href: 'https://github.com/markmansour',
-        },
-      },
-    ]}
-      columns={3}
-      classes={{
-        container: "",
-        title: "md:text-[1.3rem]",
-        icon: "text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0",
-        ...((classes?.items as {}) ?? {}),
-      }}
-    />
-</WidgetWrapper>
+</Layout>
