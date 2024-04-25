@@ -21,6 +21,23 @@ import idoImage from '~/assets/images/idobenshachar.jpeg';
 import neilImage from '~/assets/images/neilmacneale.jpeg';
 import markCasualImage from '~/assets/images/markmansour-casual.jpeg';
 
+// Content
+import * as hiwIntro from '~/pages/snippets/_hiw-intro.md';
+import * as hiwTeam from '~/pages/snippets/_hiw-team.md';
+import * as hiwAlignment from '~/pages/snippets/_hiw-alignment.md';
+import * as hiwDelegation from '~/pages/snippets/_hiw-delegation.md';
+import * as hiwCollaboration from '~/pages/snippets/_hiw-collaboration.md';
+import * as hiwMyFocus from '~/pages/snippets/_hiw-my-focus.md';
+
+import * as widScopeAndImpact from '~/pages/snippets/_wid-scope-and-impact.md';
+import * as widCultureAndLeadership from '~/pages/snippets/_wid-culture-and-leadership.md';
+import * as widInfluence from '~/pages/snippets/_wid-influence.md';
+import * as widKnowledge from '~/pages/snippets/_wid-knowledge.md';
+import * as widJudgement from '~/pages/snippets/_wid-judgement.md';
+
+import * as aboutMe from '~/pages/snippets/_about-me.md';
+
+
 const metadata = {
   title: 'Portfolio',
 };
@@ -55,11 +72,13 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
       {
         variant: 'primary',
         target: '_blank',
+//        icon: 'bi:linkedin',
         text: 'Connect on LinkedIn <svg class="w-6 h-6 ml-2" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>',
         href: 'https://www.linkedin.com/in/markmansour/',
       },
     ]}
   >
+
     <Fragment slot="subtitle">
       I&#8217;m a <strong>software engineering leader</strong> and people manager with a passion for solving customer problems. I do this by
       focusing on the most impactful deliverables, building cohesive teams, streamlining processes, and improving quality.
@@ -72,37 +91,32 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
 
   <Features2
     title="How I work"
-    subtitle="Like all leaders, my role is to deliver on what is important to my business as fast as possible.  But each leader has their own way of achieving those goals.  Here is the way I like to work."
+    subtitle={hiwIntro.compiledContent()}
     columns={3}
     items={[
       {
         title: 'Empowering my team',
-        description:
-          'As a leader, much of my success comes from my team.  Therefore, my goal is to create an environment where <strong>people do their best work</strong>.  I work with high caliber people.  I want to allow each person on my team to bring their unique perspective to their role so I can get the most out of their creativity and energy.',
+        description: hiwTeam.compiledContent(),
         icon: 'tabler:friends', // users-group
       },
       {
         title: 'Alignment',
-        description:
-          'I&apos;ve found that one of the most effective levers to get higher quality work done more quickly is ensuring that <strong>everyone on the team knows what they&#8217;re responsible for and why</strong>.  By reviewing org structures, establishing goals, and by clarifying roles and responsibilities, it clears the way for people to focus on work that pushes the whole team in the same direction.',
+        description: hiwAlignment.compiledContent(),
         icon: 'tabler:arrows-minimize', // arrows-up, aspect-ratio
       },
       {
         title: 'Delegation',
-        description:
-          'I believe those closest to the work being done are in the best place to make decision on how to do the work. My goal is to <strong>delegate</strong> as much as possible to my team. Delegating authority can range from full delegation where choices are left entirely to the team through to being quite directive. It all depends on the people and the circumstances.',
+        description: hiwDelegation.compiledContent(),
         icon: 'tabler:direction-arrows', // direction-arrows, hierarchy-3, star, stars, steam
       },
       {
         title: 'Collaboration',
-        description:
-          'When working with my direct reports, I encourage a <strong>collaborative environment</strong>.  I believe the best outcomes come when a range of opinions are shared before coming to a decision. And with a decision, my team will work in unison to achieve our shared goals.',
+        description: hiwCollaboration.compiledContent(),
         icon: 'tabler:heart-handshake',
       },
       {
         title: 'My Focus',
-        description:
-          'With the team in alignment and work delegated, I&#8217;m then free to put my energy into <strong>growing my people</strong>, <strong>working with my peers on our shared objectives</strong>, and <strong>working with my leadership to drive our business forward</strong>.',
+        description: hiwMyFocus.compiledContent(),
         icon: 'tabler:focus-centered',
       },
     ]}
@@ -133,37 +147,27 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
   items={[
     {
       title: 'Scope and Impact',
-      description: `Over the past 8 years I&#8217;ve led teams with two
-      levels of managers reporting to me and a recursive team size of around 90.  I&#8217;m based in Seattle and it&#8217;s common for me
-      to manage teams spread across the US and internationally.  My team&#8217;s products are often a significant piece of a
-      larger product portfolio.  In the past I&#8217;ve owned the
-      <a class="underline" href="https://learn.microsoft.com/en-us/entra/identity/hybrid/">Hybrid Identity features of Microsoft&#8217;s Entra ID</a>,
-      the Prime / Checkout / Merchant portions of Amazon&#8217;s <a href="https://buywithprime.amazon.com" class="underline">Buy With Prime</a> product,
-      and Continuous Delivery, Automated testing, and Change Management tooling as part of <a href="https://aws.amazon.com/products/developer-tools/" class="underline">Amazon&#8217;s Developer Productivity</a> at AWS.
-      These systems process
-      billions of records.  I&#8217;ve owned fleets of over 80,000 machines, serving over 100s of thousands of QPS.  On the
-      business side, I lead and drive strategic plans for my area of ownership.  I work closely with my stakeholders to
-      influence their strategies.`,
+      description: widScopeAndImpact.compiledContent(),
       icon: 'tabler:stairs',
     },
     {
       title: 'Culture and Leadership',
-      description: `I see culture and leadership that the ingredients that make work rewarding, enjoyable, and productive.  Overall, I&#8217;m aiming for a team that is on top of their work and has fun while doing it.  To create a great environment, I drive change and cultural transformation within my area of accountability.  I cultivate a culture that improves performance (increasing speed and frequency of delivery and reducing the number and length of outages), emphasizes system stability (when appropriate), and quality (better code and architecture as well as products that meet customer&#8217;s needs).  I also help my people reach their potential, providing those who are ready with stretch opportunities.  I coach, mentor, and develop my team members to increase the capacity of my organization.`,
+      description: widCultureAndLeadership.compiledContent(),
       icon: 'tabler:flip-vertical',
     },
     {
       title: 'Influence and Decision Making',
-      description: `We don&#8217;t work in a bubble, we work in an ecosystem.  I work with leaders across an entire company to create alignment and drive collaboration.`,
+      description: widInfluence.compiledContent(),
       icon: 'tabler:shield-lock',
     },
     {
       title: 'Knowledge',
-      description: `I love learning about new industries, which is why I&#8217;ve worked in so many of them.  I have significant subject matter expertise with developer productivity, Identity, multisided marketplaces, and Information Retrieval.  I&#8217;ve also spent time in Banking and AI (Agent Based systems).`,
+      description: widKnowledge.compiledContent(),
       icon: 'tabler:accessible',
     },
     {
       title: 'Judgement and Risk Management',
-      description: `I like getting work done, which requires seeing around corners to predict unforeseen issues and thinking carefully about where to invest effort.  My day-to-day management skills are strong in both project management and managing production systems. I actively manage risk and work with my teams so they improve their ability to identify and manage that risk.`,
+      description: widJudgement.compiledContent(),
       icon: 'tabler:chevrons-up',
     },
   ]}
@@ -233,30 +237,7 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
 >
   <Fragment slot="content">
     <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
-    <p>
-      Today I lead software engineering teams, but started as a software engineer working on internet applications from
-      the earliest days of the web. My day job was programming for the first ten years of my career working on
-      distributed systems in Java, C++, and Ruby. I still enjoy programming and occasionally I scrape out time to write
-      code. But over the last 10 years I&#8217;ve been excited, challenged, and engrossed learning about leadership and
-      how to create high performing technology teams.
-    </p>
-    <br />
-    <p>
-      Looking forward, I know that the people I work with are my top priority as I seek out new roles. I&#8217;m looking
-      for an energetic group of people who play well together and enjoy each other&#8217;s company. This leads me to a
-      conclusion that the product is really a secondary consideration. That will come as a surprise to many, but if I
-      put the people I work with first then everything else must come after that. I&#8217;m a curious person and I love
-      to learn new domains and technology. What I do look for in a product is that is has high growth potential and that
-      leadership values that product.
-    </p>
-    <br />
-    <p>If you&#8217;ve got this far, thank you.</p>
-    <br />
-    <p>
-      Please reach out to me and say hello.
-    </p>
-  </Fragment>
-
+    <Fragment set:html={aboutMe.compiledContent()}/>
   <Fragment slot="bg">
     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
   </Fragment>

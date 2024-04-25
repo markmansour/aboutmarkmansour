@@ -1,0 +1,1 @@
+As a leader, much of my success comes from my team. Therefore, my goal is to create an environment where **people do their best work**. I work with high caliber people. I want to allow each person on my team to bring their unique perspective to their role so I can get the most out of their creativity and energy.

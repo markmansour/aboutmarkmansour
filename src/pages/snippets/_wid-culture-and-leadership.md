@@ -1,0 +1,3 @@
+---
+---
+I see culture and leadership that the ingredients that make work rewarding, enjoyable, and productive. Overall, I’m aiming for a team that is on top of their work and has fun while doing it. To create a great environment, I drive change and cultural transformation within my area of accountability. I cultivate a culture that improves performance (increasing speed and frequency of delivery and reducing the number and length of outages), emphasizes system stability (when appropriate), and quality (better code and architecture as well as products that meet customer’s needs). I also help my people reach their potential, providing those who are ready with stretch opportunities. I coach, mentor, and develop my team members to increase the capacity of my organization.

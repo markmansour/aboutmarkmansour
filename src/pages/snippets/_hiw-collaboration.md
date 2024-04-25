@@ -1,0 +1,1 @@
+When working with my direct reports, I encourage a **collaborative environment**. I believe the best outcomes come when a range of opinions are shared before coming to a decision. And with a decision, my team will work in unison to achieve our shared goals.

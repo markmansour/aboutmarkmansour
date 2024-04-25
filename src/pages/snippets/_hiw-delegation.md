@@ -1,0 +1,1 @@
+I believe those closest to the work being done are in the best place to make decision on how to do the work. My goal is to **delegate** as much as possible to my team. Delegating authority can range from full delegation where choices are left entirely to the team through to being quite directive. It all depends on the people and the circumstances.

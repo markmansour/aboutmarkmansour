@@ -1,0 +1,1 @@
+Like all leaders, my role is to deliver on what is important to my business as fast as possible. But each leader has their own way of achieving those goals. Here is the way I like to work.

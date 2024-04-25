@@ -1,0 +1,1 @@
+With the team in alignment and work delegated, I'm then free to put my energy into **growing my people**, **working with my peers on our shared objectives**, and **working with my leadership to drive our business forward**.
