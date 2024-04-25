@@ -9,6 +9,10 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Content from '~/components/widgets/Content.astro';
+import { Icon } from 'astro-icon/components';
+import ItemGrid from '~/components/ui/ItemGrid.astro';
+import ItemGrid2 from '~/components/ui/ItemGrid2.astro';
+import Headline from '~/components/ui/Headline.astro';
 
 import kamenImage from '~/assets/images/kamenmoutafov.jpeg';
 import seanImage from '~/assets/images/seanmaloney.jpeg';
@@ -57,11 +61,11 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
     ]}
   >
     <Fragment slot="subtitle">
-      I&#8217m a <strong>software engineering leader</strong> with a passion for solving customer problems. I do this by
+      I&#8217m a <strong>software engineering leader</strong> and people manager with a passion for solving customer problems. I do this by
       focusing on the most impactful deliverables, building cohesive teams, streamlining processes, and improving quality.
       <br />
       <br />
-      I&#8217ve launched and run high-scale services for some of the worldI&#8217ves larges technology companies, and I&#8217ve
+      I&#8217ve launched and run high-scale services for some of the worlds largest technology companies. I&#8217ve also
       worked in startups to invent the future.
     </Fragment>
   </Hero>
@@ -87,7 +91,7 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
         title: 'Delegation',
         description:
           'I believe those closest to the work being done are in the best place to make decision on how to do the work. My goal is to <strong>delegate</strong> as much as possible to my team. Delegating authority can range from full delegation where choices are left entirely to the team through to being quite directive. It all depends on the people and the circumstances.',
-        icon: 'tabler:direction-arrows',  // direction-arrows, hierarchy-3, star, stars, steam
+        icon: 'tabler:direction-arrows', // direction-arrows, hierarchy-3, star, stars, steam
       },
       {
         title: 'Collaboration',
@@ -221,35 +225,6 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
 
 <Content
   id="about"
-  columns={3}
-  items={[
-    {
-      icon: 'tabler:brand-linkedin',
-      callToAction: {
-        target: '_blank',
-        text: 'LinkedIn',
-        href: 'https://www.linkedin.com/in/markmansour/',
-      },
-    },
-    {
-      icon: 'tabler:brand-github',
-      callToAction: {
-        target: '_blank',
-        text: 'Github',
-        href: 'https://github.com/markmansour',
-      },
-    },
-    /*
-      {
-        icon: 'tabler:brand-pinterest',
-        callToAction: {
-          target: '_blank',
-          text: 'Pinterest',
-          href: '#',
-        },
-      },
-      */
-  ]}
   image={{
     src: markCasualImage,
     alt: 'Mark Mansour in Washington DC',
@@ -259,7 +234,7 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
   <Fragment slot="content">
     <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
     <p>
-      Today I lead software engineering teams, but started as a software engineer working on internet applications since
+      Today I lead software engineering teams, but started as a software engineer working on internet applications from
       the earliest days of the web. My day job was programming for the first ten years of my career working on
       distributed systems in Java, C++, and Ruby. I still enjoy programming and occasionally I scrape out time to write
       code. But over the last 10 years I&#8217;ve been excited, challenged, and engrossed learning about leadership and
@@ -278,8 +253,7 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
     <p>If you&#8217;ve got this far, thank you.</p>
     <br />
     <p>
-      And if what I&#8217;ve written resonates with you please reach out to me - even if it isn&#8217;t in relation to a
-      job.
+      Please reach out to me and say hello.
     </p>
   </Fragment>
 
@@ -287,3 +261,45 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
     <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
   </Fragment>
 </Content>
+
+<!-- Footer Widget **************** -->
+  <WidgetWrapper
+    id={id}
+    isDark={isDark}
+    containerClass={`max-w-5xl${classes?.container ?? ""}`}
+    bg={bg}
+  >
+    <ItemGrid
+      items={[
+      {
+        callToAction: {
+          target: '_blank',
+          text: 'mark@stateofflux.com',
+          href: 'mailto:mark@stateofflux.com',
+          class: 'underline'
+        },
+      },
+      {
+        icon: 'tabler:brand-linkedin',
+        callToAction: {
+          target: '_blank',
+          href: 'https://www.linkedin.com/in/markmansour/',
+        },
+      },
+      {
+        icon: 'tabler:brand-github',
+        callToAction: {
+          target: '_blank',
+          href: 'https://github.com/markmansour',
+        },
+      },
+    ]}
+      columns={3}
+      classes={{
+        container: "",
+        title: "md:text-[1.3rem]",
+        icon: "text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mr-4 rtl:ml-4 rtl:mr-0",
+        ...((classes?.items as {}) ?? {}),
+      }}
+    />
+</WidgetWrapper>
