@@ -1,1 +1,1 @@
-We don’t work in a bubble, we work in an ecosystem. I work with leaders across an entire company to create alignment and drive collaboration.
+We don’t work in a bubble; we work in an ecosystem. I work with leaders across the entire company to create alignment and drive collaboration.

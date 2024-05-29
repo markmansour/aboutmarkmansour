@@ -1,1 +1,1 @@
-I love learning about new industries, which is why I’ve worked in so many of them. I have significant subject matter expertise with developer productivity, Identity, multisided marketplaces, and Information Retrieval. I’ve also spent time in Banking and AI (Agent Based systems).
+I love learning about new industries, which is why I’ve worked in so many of them. I have significant subject matter expertise in developer productivity, identity, multisided marketplaces, and information retrieval. I’ve also spent time in banking and AI (agent-based systems).
