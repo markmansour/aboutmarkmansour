@@ -30,6 +30,10 @@ export default defineConfig({
 //   base: '/',
 
   integrations: [
+    partytown({
+      // Example: Disable debug mode.
+      config: { debug: false },
+    }),
     tailwind({
       applyBaseStyles: false,
     }),
