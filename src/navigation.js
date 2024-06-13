@@ -125,6 +125,6 @@ export const footerData = {
     { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
   ],
   footNote: `
-    Contact me: <a class="text-blue-600 underline dark:text-muted" href="mailto:mark@stateofflux.com">mark@stateofflux.com</a> · Made with Astro
+    Contact me: <a class="text-blue-600 underline dark:text-muted" href="mailto:mark@stateofflux.com">mark@stateofflux.com</a> · Made with <a class="underline dark:text-muted" href="https://astro.build">Astro</a>
   `,
 };
