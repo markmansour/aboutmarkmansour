@@ -1,4 +1,3 @@
-
 Today, I lead software engineering teams, but I started as a software engineer working on internet applications from the earliest days of the web. My day job was programming for the first ten years of my career, working on distributed systems in Java, C++, and Ruby before transitioning to being a people manager. I still enjoy programming and occasionally I carve out <a href="https://github.com/markmansour/" class="underline">time to write code</a>. Over the last ten years, I’ve been excited, challenged, and engrossed in learning about leadership and how to create high-performing technology teams.
 
 <br/>

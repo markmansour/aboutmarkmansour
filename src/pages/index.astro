@@ -9,10 +9,6 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Content from '~/components/widgets/Content.astro';
-import { Icon } from 'astro-icon/components';
-import ItemGrid from '~/components/ui/ItemGrid.astro';
-import ItemGrid2 from '~/components/ui/ItemGrid2.astro';
-import Headline from '~/components/ui/Headline.astro';
 
 import kamenImage from '~/assets/images/kamenmoutafov.jpeg';
 import seanImage from '~/assets/images/seanmaloney.jpeg';
@@ -36,22 +32,37 @@ import * as widKnowledge from '~/pages/snippets/_wid-knowledge.md';
 import * as widJudgement from '~/pages/snippets/_wid-judgement.md';
 
 import * as aboutMe from '~/pages/snippets/_about-me.md';
-import Button from '~/components/ui/Button.astro';
-
 
 const metadata = {
   title: 'Portfolio',
 };
 
 const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } = Astro.props;
+
+// Await all markdown content compilation
+// How I Work section
+const hiwIntroContent = await hiwIntro.compiledContent();
+const hiwTeamContent = await hiwTeam.compiledContent();
+const hiwAlignmentContent = await hiwAlignment.compiledContent();
+const hiwDelegationContent = await hiwDelegation.compiledContent();
+const hiwCollaborationContent = await hiwCollaboration.compiledContent();
+const hiwMyFocusContent = await hiwMyFocus.compiledContent();
+
+// What I Do section
+const widScopeAndImpactContent = await widScopeAndImpact.compiledContent();
+const widCultureAndLeadershipContent = await widCultureAndLeadership.compiledContent();
+const widInfluenceContent = await widInfluence.compiledContent();
+const widKnowledgeContent = await widKnowledge.compiledContent();
+const widJudgementContent = await widJudgement.compiledContent();
+
+// About Me section
+const aboutMeContent = await aboutMe.compiledContent();
 ---
 
 <Layout metadata={metadata}>
   <Fragment slot="header">
     <Header
-      links={[
-         { text: 'Blog', href: '/blog' },
-      ]}
+      links={[{ text: 'Blog', href: '/blog' }]}
       actions={[
         {
           text: 'Contact Me',
@@ -73,54 +84,54 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
       {
         variant: 'primary',
         target: '_blank',
-//        icon: 'bi:linkedin',
+        //        icon: 'bi:linkedin',
         text: 'Connect on LinkedIn <svg class="w-6 h-6 ml-2" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>',
         href: 'https://www.linkedin.com/in/markmansour/',
       },
     ]}
   >
-
     <Fragment slot="subtitle">
-      I&#8217;m a <strong>software engineering leader</strong> and <strong>people manager</strong> with a passion for solving customer problems. I do this by
-      focusing on the most impactful deliverables, building cohesive teams, streamlining processes, and improving quality.
+      I&#8217;m a <strong>software engineering leader</strong> and <strong>people manager</strong> with a passion for solving
+      customer problems. I do this by focusing on the most impactful deliverables, building cohesive teams, streamlining processes,
+      and improving quality.
       <br />
       <br />
-      I&#8217;ve launched and run high-scale services for some of the world&#8217;s largest technology companies. I&#8217;ve also
-      worked in startups to invent the future.
+      I&#8217;ve launched and run high-scale services for some of the world&#8217;s largest technology companies. I&#8217;ve
+      also worked in startups to invent the future.
       <br />
       <br />
-      I current work at <a href="https://stripe.com/" class="underline">Stripe</a> on Connect.
+      I currently work at <a href="https://stripe.com/" class="underline">Stripe</a> on Connect.
     </Fragment>
   </Hero>
 
   <Features2
     title="How I work"
-    subtitle={hiwIntro.compiledContent()}
+    subtitle={hiwIntroContent}
     columns={3}
     items={[
       {
         title: 'Empowering my team',
-        description: hiwTeam.compiledContent(),
+        description: hiwTeamContent,
         icon: 'tabler:friends', // users-group
       },
       {
         title: 'Alignment',
-        description: hiwAlignment.compiledContent(),
+        description: hiwAlignmentContent,
         icon: 'tabler:arrows-minimize', // arrows-up, aspect-ratio
       },
       {
         title: 'Delegation',
-        description: hiwDelegation.compiledContent(),
+        description: hiwDelegationContent,
         icon: 'tabler:direction-arrows', // direction-arrows, hierarchy-3, star, stars, steam
       },
       {
         title: 'Collaboration',
-        description: hiwCollaboration.compiledContent(),
+        description: hiwCollaborationContent,
         icon: 'tabler:heart-handshake',
       },
       {
         title: 'My Focus',
-        description: hiwMyFocus.compiledContent(),
+        description: hiwMyFocusContent,
         icon: 'tabler:focus-centered',
       },
     ]}
@@ -143,108 +154,108 @@ const { id, isDark = false, classes = {}, bg = await Astro.slots.render('bg') } 
     </WidgetWrapper>
   </Features2>
 
-<Features3
-  title="What I do"
-  subtitle=`Let me help you understand the size and the shape of my teams so you can quickly see if my experience is in line with your role.`
-  columns={2}
-  items={[
-    {
-      title: 'Culture and Leadership',
-      description: widCultureAndLeadership.compiledContent(),
-      icon: 'tabler:flip-vertical',
-    },
-    {
-      title: 'Scope and Impact',
-      description: widScopeAndImpact.compiledContent(),
-      icon: 'tabler:stairs',
-    },
-    {
-      title: 'Influence and Decision Making',
-      description: widInfluence.compiledContent(),
-      icon: 'tabler:shield-lock',
-    },
-    {
-      title: 'Knowledge',
-      description: widKnowledge.compiledContent(),
-      icon: 'tabler:accessible',
-    },
-    {
-      title: 'Judgement and Risk Management',
-      description: widJudgement.compiledContent(),
-      icon: 'tabler:chevrons-up',
-    },
-  ]}
-  classes={{ container: 'max-w-5xl' }}
->
-  <Fragment slot="bg">
-    <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-  </Fragment>
-
-  <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-    <Testimony
-      image={{
-        src: seanImage,
-        alt: 'Sean Maloneys Image',
-      }}
-      testimonial=`I can't speak highly enough of his leadership, direction, and ability to create a healthy culture in his organization. […] Mark is able to create high-functioning organizations that work well together under pressure and deliver results without sacrificing morale.`
-      name="Sean Maloney"
-      job="Director of Engineering at Epic Games"
-    />
-  </WidgetWrapper>
-</Features3>
-
-<!-- Testimonials Widget *********** -->
-
-<Testimonials
-  title="Words from past collegues"
-  testimonials={[
-    {
-      testimonial: `Mark's strengths include his ability to bring clarity to a problem by understanding the deep technical details, and then being able to up-level them so that everyone can understand.  In addition to this, Mark brings out the best in his direct reports and colleagues by teaching: Mark asks questions, so that others can arrive at a solution themselves, rather than just sharing the solution directly.  This has greatly helped me grow as an engineer.`,
-      name: 'Ido Benshachar',
-      job: 'Principal Engineering Manager at Microsoft',
-      image: {
-        src: idoImage,
-        alt: 'Ido Benshachar Image',
+  <Features3
+    title="What I do"
+    subtitle={`Let me help you understand the size and the shape of my teams so you can quickly see if my experience is in line with your role.`}
+    columns={2}
+    items={[
+      {
+        title: 'Culture and Leadership',
+        description: widCultureAndLeadershipContent,
+        icon: 'tabler:flip-vertical',
       },
-    },
-    {
-      testimonial: `Mark is the person who taught me how to be a successful manager at Amazon. Management at Amazon comes with extremely high expectations. I honestly didn't know what I was in for when I started the job, even though I had 7 years of experience there as an engineer.  Through Mark's guidance I learned how to communicate at an executive level. I learned how to manage large projects which had an impact across the entire company. Mark was good at finding the balance of leaning in when I needed help and giving me lots of space to when I was doing ok (or when failure was an option).  Ultimately I got promoted to Sr. Manager, and I never would have performed at that level without Mark's mentorship. I'm grateful to have had his help, and I think he would be a great leader on any team.`,
-      name: 'Neil Macneale IV',
-      job: 'former Senior Manager at AWS',
-      image: {
-        src: neilImage,
-        alt: 'Neil Macneale IV Image',
+      {
+        title: 'Scope and Impact',
+        description: widScopeAndImpactContent,
+        icon: 'tabler:stairs',
       },
-    },
-    {
-      testimonial: `I observed Mark to be a highly effective leader of people. I saw him aligning work to impact, an emphasis on quality and automation in services, good judgment and quick decision making when there is no time for deep analysis, an iterative approach to software and services to deliver as much value as possible as quickly as possible, then continue to iterate towards your goals.`,
-      name: 'Joe Isenhour',
-      job: 'Principal Engineering Manager at Microsoft',
-      image: {
-        src: joeImage,
-        alt: 'Joe Isenhour Image',
+      {
+        title: 'Influence and Decision Making',
+        description: widInfluenceContent,
+        icon: 'tabler:shield-lock',
       },
-    },
-  ]}
-/>
-
-<!-- Content Widget **************** -->
-
-<Content
-  id="about"
-  image={{
-    src: markCasualImage,
-    alt: 'Mark Mansour in Washington DC',
-    loading: 'eager',
-  }}
->
-  <Fragment slot="content">
-    <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
-    <Fragment set:html={aboutMe.compiledContent()}/>
+      {
+        title: 'Knowledge',
+        description: widKnowledgeContent,
+        icon: 'tabler:accessible',
+      },
+      {
+        title: 'Judgement and Risk Management',
+        description: widJudgementContent,
+        icon: 'tabler:chevrons-up',
+      },
+    ]}
+    classes={{ container: 'max-w-5xl' }}
+  >
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Fragment>
-</Content>
 
+    <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
+      <Testimony
+        image={{
+          src: seanImage,
+          alt: 'Sean Maloneys Image',
+        }}
+        testimonial=`I can't speak highly enough of his leadership, direction, and ability to create a healthy culture in his organization. […] Mark is able to create high-functioning organizations that work well together under pressure and deliver results without sacrificing morale.`
+        name="Sean Maloney"
+        job="Director of Engineering at Epic Games"
+      />
+    </WidgetWrapper>
+  </Features3>
+
+  <!-- Testimonials Widget *********** -->
+
+  <Testimonials
+    title="Words from past collegues"
+    testimonials={[
+      {
+        testimonial: `Mark's strengths include his ability to bring clarity to a problem by understanding the deep technical details, and then being able to up-level them so that everyone can understand.  In addition to this, Mark brings out the best in his direct reports and colleagues by teaching: Mark asks questions, so that others can arrive at a solution themselves, rather than just sharing the solution directly.  This has greatly helped me grow as an engineer.`,
+        name: 'Ido Benshachar',
+        job: 'Principal Engineering Manager at Microsoft',
+        image: {
+          src: idoImage,
+          alt: 'Ido Benshachar Image',
+        },
+      },
+      {
+        testimonial: `Mark is the person who taught me how to be a successful manager at Amazon. Management at Amazon comes with extremely high expectations. I honestly didn't know what I was in for when I started the job, even though I had 7 years of experience there as an engineer.  Through Mark's guidance I learned how to communicate at an executive level. I learned how to manage large projects which had an impact across the entire company. Mark was good at finding the balance of leaning in when I needed help and giving me lots of space to when I was doing ok (or when failure was an option).  Ultimately I got promoted to Sr. Manager, and I never would have performed at that level without Mark's mentorship. I'm grateful to have had his help, and I think he would be a great leader on any team.`,
+        name: 'Neil Macneale IV',
+        job: 'former Senior Manager at AWS',
+        image: {
+          src: neilImage,
+          alt: 'Neil Macneale IV Image',
+        },
+      },
+      {
+        testimonial: `I observed Mark to be a highly effective leader of people. I saw him aligning work to impact, an emphasis on quality and automation in services, good judgment and quick decision making when there is no time for deep analysis, an iterative approach to software and services to deliver as much value as possible as quickly as possible, then continue to iterate towards your goals.`,
+        name: 'Joe Isenhour',
+        job: 'Principal Engineering Manager at Microsoft',
+        image: {
+          src: joeImage,
+          alt: 'Joe Isenhour Image',
+        },
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="about"
+    image={{
+      src: markCasualImage,
+      alt: 'Mark Mansour in Washington DC',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
+      <Fragment set:html={aboutMeContent} />
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
 </Layout>

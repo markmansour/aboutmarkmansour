@@ -1,5 +1,6 @@
 ---
 ---
+
 I see culture and leadership as the ingredients that make work rewarding, enjoyable, and productive. Overall, I’m aiming for a team that is on top of their work and has fun while doing it. To create a great environment, I drive change and cultural transformation within my area of accountability. I cultivate a high-performance culture that measurably improves business outcomes - increasing delivery speed, reducing outages, and enhancing product quality through better code architecture and stronger alignment with customer needs. I identify and develop talent by providing growth opportunities that simultaneously benefit the individual and the organization. My approach to coaching and mentoring has consistently increased team capacity and retention while building a pipeline of future leaders.
 
 My approach to building high-performing teams includes implementing proven strategies to attract top talent from a wide range of sources, focusing on skills and potential rather than traditional paths. This has consistently helped me find exceptional people who bring fresh perspectives and solve problems in innovative ways.

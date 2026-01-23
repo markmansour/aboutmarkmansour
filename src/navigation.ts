@@ -11,6 +11,8 @@ export const headerData = {
 };
 
 export const footerData = {
+  links: [],
+  secondaryLinks: [],
   socialLinks: [
     { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://linkedin.com/in/markmansour' },
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/markmansour' },

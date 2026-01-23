@@ -1,5 +1,6 @@
 ---
 ---
+
 Over the past eight years, I’ve led teams with two levels of managers reporting to me, and a recursive team size of around 90. Based in Seattle, I frequently manage teams spread across the US and internationally. My team’s products are often a significant piece of a larger product portfolio.
 \
 \
