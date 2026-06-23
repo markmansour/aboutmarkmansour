@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url';
 
 import { defineConfig } from 'astro/config';
 import { unified } from '@astrojs/markdown-remark';
+import tailwindcss from '@tailwindcss/vite';
 
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
@@ -57,7 +58,11 @@ export default defineConfig({
     ),
 
     compress({
-      CSS: true,
+      // CSS compression is handled by Astro's built-in Vite/Lightning CSS
+      // minifier. astro-compress's csso pass is redundant and silently drops the
+      // scroll-reveal rule in tailwind.css
+      // (`[class~="...intersect:animate-fade"]:not([no-intersect])`), so leave it off.
+      CSS: false,
       HTML: {
         'html-minifier-terser': {
           removeAttributeQuotes: false,
@@ -85,6 +90,7 @@ export default defineConfig({
   },
 
   vite: {
+    plugins: [tailwindcss()],
     resolve: {
       alias: {
         '~': path.resolve(__dirname, './src'),
