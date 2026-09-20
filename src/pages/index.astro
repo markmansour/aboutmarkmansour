@@ -165,7 +165,11 @@ const aboutMeContent = await aboutMe.compiledContent();
         icon: 'tabler:chevrons-up',
       },
     ]}
-  />
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-zinc-50 dark:bg-zinc-900/50"></div>
+    </Fragment>
+  </Steps2>
 
   <!-- Testimonials: two featured pull-quotes, then a compact grid for the rest -->
   <WidgetWrapper containerClass="max-w-6xl mx-auto">
@@ -221,6 +225,10 @@ const aboutMeContent = await aboutMe.compiledContent();
     <Fragment slot="content">
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">About me</h2>
       <Fragment set:html={aboutMeContent} />
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-zinc-50 dark:bg-zinc-900/50"></div>
     </Fragment>
   </Content>
 </Layout>

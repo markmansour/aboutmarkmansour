@@ -15,19 +15,19 @@ const { testimonial, image, name, job } = Astro.props;
   {
     testimonial && (
       <blockquote>
-        <p class="text-xl md:text-2xl font-medium leading-snug text-heading">&#8220;{testimonial}&#8221;</p>
+        <p class="text-xl font-medium leading-snug text-heading">&#8220;{testimonial}&#8221;</p>
       </blockquote>
     )
   }
   <figcaption class="mt-6 flex items-center gap-3">
     {
       image && (
-        <div class="h-12 w-12 rounded-full border border-primary/20 shrink-0">
+        <div class="h-12 w-12 rounded-full border border-emerald-100 dark:border-emerald-900 shrink-0">
           {typeof image === 'string' ? (
             <Fragment set:html={image} />
           ) : (
             <Image
-              class="h-12 w-12 rounded-full border border-primary/20 min-w-full min-h-full"
+              class="h-12 w-12 rounded-full border border-emerald-100 dark:border-emerald-900 min-w-full min-h-full"
               widths={[400, 768]}
               layout="fixed"
               {...image}
