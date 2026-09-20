@@ -1,0 +1,46 @@
+---
+import Image from '~/components/common/Image.astro';
+
+interface Props {
+  testimonial?: string;
+  image?: string | unknown;
+  name?: string;
+  job?: string;
+}
+
+const { testimonial, image, name, job } = Astro.props;
+---
+
+<figure class="max-w-2xl">
+  {
+    testimonial && (
+      <blockquote>
+        <p class="text-xl md:text-2xl font-medium leading-snug text-heading">&#8220;{testimonial}&#8221;</p>
+      </blockquote>
+    )
+  }
+  <figcaption class="mt-6 flex items-center gap-3">
+    {
+      image && (
+        <div class="h-12 w-12 rounded-full border border-primary/20 shrink-0">
+          {typeof image === 'string' ? (
+            <Fragment set:html={image} />
+          ) : (
+            <Image
+              class="h-12 w-12 rounded-full border border-primary/20 min-w-full min-h-full"
+              widths={[400, 768]}
+              layout="fixed"
+              {...image}
+              width={48}
+              height={48}
+            />
+          )}
+        </div>
+      )
+    }
+    <div>
+      {name && <p class="text-base font-semibold">{name}</p>}
+      {job && <p class="text-sm text-muted">{job}</p>}
+    </div>
+  </figcaption>
+</figure>
